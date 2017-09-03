@@ -4,8 +4,10 @@ Pusher.log = function(message) {
   }
 };
 
-var pusher = new Pusher("PUSHER_APP_KEY");
-var apiURL = "https://tweet-stats-api.herokuapp.com";
+var pusher = new Pusher("9f4941cec42a3ca08efb", {
+  cluster: "eu"
+});
+var apiURL = "https://trainbuzz-api.herokuapp.com";
 
 function numberWithCommas(x) {
  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

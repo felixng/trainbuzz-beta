@@ -16,9 +16,7 @@ h2 {
   color: rgba(255, 255, 255, 0.5);
   font-size: 20px;
   font-weight: 400;
-  margin: 10px 0 0 70px;
-  position: absolute;
-  text-transform: uppercase;
+  margin: 10px 0 0 20px;
   z-index: 10;
 }
 
