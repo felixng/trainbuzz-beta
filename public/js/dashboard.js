@@ -13,7 +13,6 @@ function numberWithCommas(x) {
  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-// TODO: Pull active keywords from the API
 $.getJSON(apiURL + "/keywords.json", function(keywords) {
   if (!keywords || keywords.length === 0) {
     console.log("No keywords");
@@ -85,6 +84,7 @@ $.getJSON(apiURL + "/keywords.json", function(keywords) {
 
   statsChannel.bind("update", function(data) {
     _.each(data, function(stat, keyword) {
+      console.log(data);
       var graph;
       if (graph = graphs[keyword]) {
         var values = [{
