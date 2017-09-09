@@ -6,9 +6,34 @@ html, body {
 body {
   background: radial-gradient(ellipse farthest-corner at center top, #4b4b4b 0%, #484848 100%);
   color: #fff;
-  font-family: Helvetica Neue, Verdana, Arial, sans-serif;
+  font-family: 'Lato', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 0;
   margin: 0;
+  vertical-align: baseline;
+}
+
+div.header {
+  text-align: center;
+  margin: 2.5em 0 0 0;
+}
+
+.header h1 {
+  font-size: 4em;
+  font-weight: 100;
+  margin: 0 0 0.25em 0;
+  line-height: 1em;
+}
+
+h1 a {
+  text-decoration: none;
+  color: white;
+}
+
+.sub-header{
+  font-size: 1em;
+  line-height: 1em;
+  font-weight: 100;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 h2 {
