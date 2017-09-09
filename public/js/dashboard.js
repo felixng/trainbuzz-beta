@@ -84,7 +84,6 @@ $.getJSON(apiURL + "/keywords.json", function(keywords) {
 
   statsChannel.bind("update", function(data) {
     _.each(data, function(stat, keyword) {
-      console.log(data);
       var graph;
       if (graph = graphs[keyword]) {
         var values = [{
