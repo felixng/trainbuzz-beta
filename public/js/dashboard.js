@@ -1,7 +1,7 @@
 Pusher.log = function(message) {
-  // if (window.console && window.console.log) {
-  //   window.console.log(message);
-  // }
+  if (window.console && window.console.log) {
+    window.console.log(message);
+  }
 };
 
 var pusher = new Pusher("9f4941cec42a3ca08efb", {
