@@ -30,10 +30,17 @@ h1 a {
 }
 
 .sub-header{
-  font-size: 1em;
+  font-size: 1.15em;
   line-height: 1em;
   font-weight: 100;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  letter-spacing: 0.4px;
+
+}
+
+.sub-header span{
+  display: block;
+  padding-bottom: 0.5em;
 }
 
 h2 {

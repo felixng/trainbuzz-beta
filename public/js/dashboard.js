@@ -96,7 +96,7 @@ $.getJSON(apiURL + "/keywords.json", function(keywords) {
         
         // update total
         var totalEl = document.getElementById(keyword + '_total' );
-        totalEl.innerHTML = numberWithCommas(stat.allTimeTotal);
+        totalEl.innerHTML = 'Total Today: ' + numberWithCommas(stat.allTimeTotal);
       }
     });
   });
