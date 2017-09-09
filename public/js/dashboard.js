@@ -38,6 +38,7 @@ $.getJSON(apiURL + "/keywords.json", function(keywords) {
     // Generate graph element
     var graphElement = document.createElement("div");
     graphElement.classList.add("epoch");
+    graphElement.classList.add("brand");
     graphElement.dataset.keyword = keyword;
 
     graphElements[keyword] = graphElement;
@@ -70,7 +71,7 @@ $.getJSON(apiURL + "/keywords.json", function(keywords) {
 
       var graphElement = graphElements[keyword];
       graphs[keyword] = $(graphElement).epoch({
-        type: "time.area",
+        type: "time.line",
         data: [graphData],
         axes: ["left", "right", "bottom"],
         ticks: {right: 3, left: 3},
