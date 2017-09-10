@@ -5,10 +5,7 @@ Pusher.log = function(message) {
 };
 
 var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-var chartSize = 60;
-if (w < 500){
-  chartSize = 20;
-}
+var chartSize = Math.round(w/1000 * 60);
 
 var pusher = new Pusher("9f4941cec42a3ca08efb", {
   cluster: "eu"
