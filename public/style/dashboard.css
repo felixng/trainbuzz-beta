@@ -1,6 +1,6 @@
 html, body {
   height: 100%;
-  width: 100%;
+  max-width: 100%;
 }
 
 body {
@@ -35,7 +35,6 @@ h1 a {
   font-weight: 100;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   letter-spacing: 0.4px;
-
 }
 
 .sub-header span{
@@ -98,10 +97,6 @@ h2 {
   fill: white !important;
 }
 
-.total-count:before {
-  context: "Total Count:";
-}
-
 .total-count {
   font-size: 28px;
   text-align: center;
@@ -128,4 +123,30 @@ h2 {
 
 .footer a, .footer a:visited {
   color: #fff;
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  .sub-header{
+    font-size: 1em;
+    margin: 0 1em;
+  }
+
+  .desktop-only{
+    display: none !important;
+  }
+
+  .epoch-theme-dark{
+    width: 100%;
+  }
+
+  .graph-container {
+    max-width: 100%;
+  }
+
+  .total-count {
+    font-size: 0.75em;
+  }
 }

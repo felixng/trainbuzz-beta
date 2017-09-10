@@ -4,6 +4,12 @@ Pusher.log = function(message) {
   }
 };
 
+var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+var chartSize = 60;
+if (w < 500){
+  chartSize = 20;
+}
+
 var pusher = new Pusher("9f4941cec42a3ca08efb", {
   cluster: "eu"
 });
@@ -75,7 +81,7 @@ $.getJSON(apiURL + "/keywords.json", function(keywords) {
         data: [graphData],
         axes: ["left", "right", "bottom"],
         ticks: {right: 3, left: 3},
-        windowSize: 60,
+        windowSize: chartSize,
         height: graphElement.clientHeight
       });
     });
