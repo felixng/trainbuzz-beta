@@ -1,7 +1,7 @@
 Pusher.log = function(message) {
-  if (window.console && window.console.log) {
-    window.console.log(message);
-  }
+  // if (window.console && window.console.log) {
+  //   window.console.log(message);
+  // }
 };
 
 var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
@@ -36,7 +36,7 @@ $.getJSON(apiURL + "/keywords.json", function(keywords) {
     graphHeaderElement.innerHTML = keyword;
     graphHeaderElement.appendChild(totalCountElement);
 
-    graphContainer.appendChild(graphHeaderElement);
+    // graphContainer.appendChild(graphHeaderElement);
 
     // Generate graph element
     var graphElement = document.createElement("div");
@@ -46,7 +46,13 @@ $.getJSON(apiURL + "/keywords.json", function(keywords) {
 
     graphElements[keyword] = graphElement;
 
-    graphContainer.appendChild(graphElement);
+    var row = document.createElement('div');
+    row.className = 'row';
+    row.appendChild(graphHeaderElement);
+    row.appendChild(graphElement);
+
+    // graphContainer.appendChild(graphElement);
+    graphContainer.appendChild(row);
   });
 
   // Create graphs
@@ -86,6 +92,8 @@ $.getJSON(apiURL + "/keywords.json", function(keywords) {
 
   var statsChannel = pusher.subscribe("stats");
 
+  var initial = true;
+
   statsChannel.bind("update", function(data) {
     _.each(data, function(stat, keyword) {
       var graph;
@@ -99,8 +107,26 @@ $.getJSON(apiURL + "/keywords.json", function(keywords) {
         
         // update total
         var totalEl = document.getElementById(keyword + '_total' );
-        totalEl.innerHTML = 'Total Today: ' + numberWithCommas(stat.allTimeTotal);
+        totalEl.innerHTML = '24 hours total:' + numberWithCommas(stat.allTimeTotal);
+        totalEl.setAttribute('data-count', stat.allTimeTotal);
       }
     });
+
+    //Only reorder on first load.
+    if (initial){
+      var divs = $("div.row");
+      var numericallyOrderedDivs = divs.sort(function(a, b) {
+        return parseInt($(b).find('.total-count').data('count')) - parseInt($(a).find('.total-count').data('count'));
+        // return $(a).find('.total-count').attr('id') < $(b).find('.total-count').attr('id');
+      });
+      
+      $(".graph-container").html(numericallyOrderedDivs);
+      initial = false;
+    }
+    
   });
+
+  
+
+  
 });
