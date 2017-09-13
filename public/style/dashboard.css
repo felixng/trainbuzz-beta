@@ -12,6 +12,10 @@ body {
   vertical-align: baseline;
 }
 
+a {
+  color: rgba(194,68,72, 1);
+}
+
 div.header {
   text-align: center;
   margin: 2.5em 0 0 0;
@@ -106,7 +110,27 @@ h2 {
   float: right;
 }
 
-.footer {
+footer {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: 1em 0;
+  margin: 0em 2.5%;
+  border-top: 1px solid #e5e5e5;
+  line-height: 140%;
+  font-size: 1em;
+  font-weight: 100;
+}
+
+footer a {
+  font-weight: 400;
+}
+
+footer section {
+  display: block;
+}
+
+/*.footer {
   position: fixed;
   width: 100%;
   bottom: 0;
@@ -123,7 +147,7 @@ h2 {
 
 .footer a, .footer a:visited {
   color: #fff;
-}
+}*/
 
 @media only screen 
   and (min-device-width: 320px) 
