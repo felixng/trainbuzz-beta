@@ -107,7 +107,7 @@ $.getJSON(apiURL + "/keywords.json", function(keywords) {
         
         // update total
         var totalEl = document.getElementById(keyword + '_total' );
-        totalEl.innerHTML = '24 hours total:' + numberWithCommas(stat.allTimeTotal);
+        totalEl.innerHTML = 'Past 24 hours total:' + numberWithCommas(stat.allTimeTotal);
         totalEl.setAttribute('data-count', stat.allTimeTotal);
       }
     });
@@ -117,7 +117,6 @@ $.getJSON(apiURL + "/keywords.json", function(keywords) {
       var divs = $("div.row");
       var numericallyOrderedDivs = divs.sort(function(a, b) {
         return parseInt($(b).find('.total-count').data('count')) - parseInt($(a).find('.total-count').data('count'));
-        // return $(a).find('.total-count').attr('id') < $(b).find('.total-count').attr('id');
       });
       
       $(".graph-container").html(numericallyOrderedDivs);
