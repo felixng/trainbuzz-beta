@@ -41,7 +41,7 @@ h1 a {
   letter-spacing: 0.4px;
 }
 
-.sub-header span{
+.sub-header > span{
   display: block;
   padding-bottom: 0.5em;
 }
@@ -128,6 +128,7 @@ footer a {
 
 footer section {
   display: block;
+  padding: 0 0.25em;
 }
 
 /*.footer {
